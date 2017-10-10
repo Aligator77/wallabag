@@ -2,9 +2,9 @@
 
 namespace Tests\Wallabag\ImportBundle\Consumer\AMQP;
 
+use Wallabag\CoreBundle\Entity\Entry;
 use Wallabag\ImportBundle\Consumer\RedisEntryConsumer;
 use Wallabag\UserBundle\Entity\User;
-use Wallabag\CoreBundle\Entity\Entry;
 
 class RedisEntryConsumerTest extends \PHPUnit_Framework_TestCase
 {
@@ -182,7 +182,7 @@ JSON;
 
         $res = $consumer->manage($body);
 
-        $this->assertFalse($res);
+        $this->assertTrue($res);
     }
 
     public function testMessageWithEntryProcessed()
